@@ -1,0 +1,26 @@
+﻿<form method="post" name="frm">
+    <input type="text" name="f"  />
+</form>
+<script>
+    frm['f'].onpaste = function(ev){
+        //console.log(ev.clipboardData);
+        var files =  ev.clipboardData.files;
+        if(files.length > 0){
+            var fd = new FormData();
+            fd.append('f',files[0]);
+            $.ajax({
+                url: '/dashboard/image/clipboard',
+                method: 'post',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: (d)=>{
+                    //console.log(d);
+                    if(d == 1 ){
+                        window.location.href='/dashboard/image';
+                    }
+                }
+            });
+        }
+    }
+</script>

@@ -1,0 +1,23 @@
+﻿@model List<Category>
+<a class="btn btn-primary" href="/dashboard/category/create">Create</a>
+<table class="table table-bordered">
+    <tr class="table-dark">
+        <th>Id</th>
+        <th>Name</th>
+        <th>ParentId</th>
+        <th>Edit</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.ParentId</td>
+            <td>
+                <a href="/dashboard/category/edit/@item.Id">
+                    <i class="fa fa-edit"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>

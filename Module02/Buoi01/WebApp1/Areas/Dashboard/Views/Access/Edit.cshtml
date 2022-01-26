@@ -1,0 +1,15 @@
+﻿@model WebApp1.Models.Access
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers 
+<form method="post">
+    <div>
+        <label asp-for="RoleId">Role</label>
+        <select asp-for="RoleId" asp-items="@ViewBag.roles"></select>
+    </div>
+    <div>
+        <label asp-for="Url">Url</label>
+        <input  type="text" asp-for="Url"/>
+    </div>
+    <div>
+        <button>Save Chages</button>
+    </div>
+</form>

@@ -1,0 +1,74 @@
+﻿
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+<form method="post">
+    <div>
+        <label>Princes</label>
+        <select name="provinceId" asp-items="@ViewBag.provinces"></select>
+    </div>
+    
+
+    <div>
+        <label>District</label>
+        <select name="districtId"></select>
+    </div>
+    <div>
+        <label>Award</label>
+        <select name="wardId"></select>
+    </div>
+</form>
+<script>
+    function loadDistricts(id) {
+        $.post(`/dashboard/ajax/getdistricts/${id}`, (d) => {
+            //Xóa dữ liệu cũ
+            $('select[name="districtId"]').html(null);
+            //console.log(d);
+
+            for (var i in d) {
+                $('select[name="districtId"]').append(`<option value="${d[i]['id']}">${d[i]['name']}</option>`);
+            }
+
+            //Để ở đây districtId ko bị null
+            loadWards($('select[name="districtId"]').val());
+        });
+
+        
+    }
+
+    //
+    function loadWards(id) {
+        $.post(`/dashboard/ajax/getwards/${id}`, (d) => {
+            $('select[name="wardId"]').html(null);
+            //console.log(d);
+
+            for (var i in d) {
+                $('select[name="wardId"]').append(`<option value="${d[i]['id']}">${d[i]['name']}</option>`);
+            }
+        });
+    }
+    //
+    var pid = localStorage.getItem('pid');
+    if (pid == null) {
+        pid = $('select[name="provinceId"]').val();
+        localStorage.setItem('pid', pid);
+    }
+    //
+    $('select[name="provinceId"]').val(pid);
+    loadDistricts(pid);
+    $('select[name="provinceId"]').change(function () {
+        var id = $(this).val();
+        localStorage.setItem('pid', id);
+        loadDistricts(id);
+    });
+    //
+
+    
+    //
+    
+    //
+    $('select[name="districtId"]').change(function () {
+        loadWards($(this).val());
+    });
+    //
+   
+
+</script>

@@ -1,0 +1,54 @@
+﻿@model List<WebApp1.Models.Superstore>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Row Id</th>
+            <th>Order Id</th>
+            <th>Order Date</th>
+            <th>Ship Date</th>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+            <th>Segment</th>
+            <th>Coutry</th>
+            <th>State</th>
+            <th>Postal Code</th>
+            <th>Region</th>
+            <th>Product Id</th>
+            <th>Category</th>
+            <th>Sub Category</th>
+            <th>Product name</th>
+            <th>Sales</th>
+            <th>Quantity</th>
+            <th>Discount</th>
+            <th>Profit</th>
+        </tr>
+    </thead>
+    <tbody id="sheet">
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.RowId</td>
+            <td>@item.OrderId</td>
+            <td>@item.OrderDate</td>
+            <td>@item.ShipDate</td>
+            <td>@item.CustomerId</td>
+            <td>@item.CustomerName</td>
+            <td>@item.Segment</td>
+            <td>@item.Country</td>
+            <td>@item.State</td>
+            <td>@item.PostalCode</td>
+            <td>@item.Region</td>
+            <td>@item.ProductId</td>
+            <td>@item.Category</td>
+            <td>@item.SubCategory</td>
+            <td>@item.ProductName</td>
+            <td>@item.Sales</td>
+            <td>@item.Quantity</td>
+            <td>@item.Discount</td>
+            <td>@item.Profit</td>
+        </tr>
+            
+        }
+    </tbody>
+</table>

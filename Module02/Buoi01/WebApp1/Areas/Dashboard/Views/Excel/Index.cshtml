@@ -1,0 +1,65 @@
+﻿@model List<WebApp1.Models.Superstore>
+<form action="/dashboard/excel/upload" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Chose File</label>
+        <input type="file" name="f"/>
+    </div>
+    <div>
+        <button>Save Changes</button>
+    </div>
+</form>
+<ul class="pagination">
+    @*@for (int i = 1; i <= ViewBag.total; i++)
+        {
+            <li class="page-item"><a class="page-link" href="/dashboard/excel/index/@i">@i</a></li>
+        }*@
+
+    @{ int p = ViewContext.RouteData.Values["id"] != null ? Convert.ToInt32(ViewContext.RouteData.Values["id"]) : 1;}
+    @for (int i = 1; i <= ViewBag.total; i++)
+    {
+        if (Context.Request.Query.ContainsKey("p"))
+        {
+            if (i == p)
+            {
+                <li class="page-item active"><a class="page-link" href="/dashboard/excel/index/@i?q=@Context.Request.Query["id"]">@i</a></li>
+            }
+            else
+            {
+                <li class="page-item "><a class="page-link" href="/dashboard/excel/index/@i?q=@Context.Request.Query["id"]">@i</a></li>
+            }
+        }
+        else
+        {
+            if (i == p)
+            {
+                <li class="page-item active"><a class="page-link" href="/dashboard/excel/index/@i">@i</a></li>
+            }
+            else
+            {
+                <li class="page-item"><a class="page-link" href="/dashboard/excel/index/@i">@i</a></li>
+            }
+        }
+    }
+</ul>
+<script>
+    $("#s").attr('action', '/dashboard/excel/search');
+</script>
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Row ID</th>
+            <th>Order Id</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RowId</td>
+                <td>@item.OrderId</td>
+                <td>@item.OrderDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

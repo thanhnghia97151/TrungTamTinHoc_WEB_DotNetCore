@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Category>
+@addTagHelper *,WebApp1
+
+<link href="~/css/navbar_multi.css" rel="stylesheet"/>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">Brand</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="main_nav">
+		  	
+				<menu categories="@Model"></menu>
+
+		  	
+		</div>
+	</div>
+</nav>
+<script>
+	document.addEventListener("DOMContentLoaded", function(){
+	// make it as accordion for smaller screens
+	if (window.innerWidth < 992) {
+	  // close all inner dropdowns when parent is closed
+	  document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+	    everydropdown.addEventListener('hidden.bs.dropdown', function () {
+	      // after dropdown is hidden, then find all submenus
+	        this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+	          // hide every submenu as well
+	          everysubmenu.style.display = 'none';
+	        });
+	    })
+	  });
+	  document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+	    element.addEventListener('click', function (e) {
+	        let nextEl = this.nextElementSibling;
+	        if(nextEl && nextEl.classList.contains('submenu')) {	
+	          // prevent opening link if link needs to open dropdown
+	          e.preventDefault();
+	          if(nextEl.style.display == 'block'){
+	            nextEl.style.display = 'none';
+	          } else {
+	            nextEl.style.display = 'block';
+	          }
+	        }
+	    });
+	  })
+	}
+	// end if innerWidth
+}); 
+</script>

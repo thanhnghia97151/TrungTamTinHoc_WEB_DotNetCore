@@ -1,0 +1,25 @@
+﻿@model Category
+<form method="post" action="/dashboard/category/create">
+    <div>
+        <lable>Name</lable>
+        <input type="text" asp-for="CategoryName"/>
+    </div>
+    <div>
+        <button>Create</button>
+    </div>
+</form>
+<table>
+    @foreach(Category item in ViewBag.categories)
+    {
+        <tr>
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td>
+                <a href="/dashboard/category/delete/@item.CategoryId">Delete</a>
+            </td>
+            <td>
+                <a href="/dashboard/category/edit/@item.CategoryId">Edit</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,28 @@
+﻿@model Pdf
+
+    <link rel="stylesheet" href="/css/kendo.common.min.css" />
+    <link rel="stylesheet" href="/css/kendo.default.min.css" />
+    <link rel="stylesheet" href="/css/kendo.default.mobile.min.css" />
+
+  
+    <div id="pdfViewer"></div>
+    
+    <script>
+        $.when(
+        $.getScript("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.2/pdf.js"),
+        $.getScript("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.2/pdf.worker.js")
+            )
+            .done(function () {
+                window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.2/pdf.worker.js';           
+            }).then(function(){
+                $("#pdfViewer").kendoPDFViewer({
+                    pdfjsProcessing: {
+                        file: "/pdfs/@Model.Url"
+                    },
+                    width: "100%",
+                    height: 1200
+                });
+            })
+    </script>
+    
+    <script src="/js/kendo.all.min.js"></script>

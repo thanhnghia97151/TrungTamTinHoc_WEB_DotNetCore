@@ -1,0 +1,26 @@
+﻿@model List<Pdf>
+<a class="btn btn-success" href="/dashboard/pdf/create"> Create</a>
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Url</th>
+            <th>Size</th>
+            <td>Detail</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Url</td>
+                <td>@item.Size</td>
+                <td>
+                    <a href="/dashboard/pdf/detail/@item.Id"><i class="fa fa-file-pdf">PDF</i></a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

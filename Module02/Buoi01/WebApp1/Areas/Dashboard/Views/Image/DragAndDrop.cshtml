@@ -1,0 +1,40 @@
+﻿<div ondrop="dropHandler(event)" ondragover="dragoverHandler(event)" id="zone">
+    Drop Zone
+</div>
+<style>
+    #zone{
+        border: 1px solid #ddd;
+        width:300px;
+        height: 270px;
+        text-align:center;
+        background-color:bisque;
+    }
+</style>
+<script>
+    function dropHandler(ev){
+        ev.preventDefault();// chặn chuyển qua trang khác
+        //console.log(ev.dataTransfer.files);
+        var files = ev.dataTransfer.files;
+        var fd = new FormData();
+        for(var i= 0;i<files.length;i++){
+            fd.append('af',files[i]);
+        }
+        $.post({
+            url: '/dashboard/image/draganddrop',
+            method: 'post',
+            data: fd,
+            contentType:false,
+            processData:false,
+         
+            success: (d)=>{
+                //console.log(d); 
+                if(d>0){
+                    window.location.href = '/dashboard/image';
+                }
+            }
+        });
+    }
+    function dragoverHandler(ev){
+        ev.preventDefault();
+    }
+</script>

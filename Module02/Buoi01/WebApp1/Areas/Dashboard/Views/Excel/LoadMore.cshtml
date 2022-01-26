@@ -1,0 +1,64 @@
+﻿@model List<WebApp1.Models.Superstore>
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+<partial name="_Superstore" model="@Model"> </partial>
+
+<div class="text-center">
+    <button id="btn" class="btn btn-primary">Load more</button>
+</div>
+<script>
+    var p = 1;
+    $(btn).click(() => {
+        p++;
+        $.post(`/dashboard/excel/loadjson/${p}`, (d) => {
+            for (var i in d) {
+                $(sheet).append(
+                    `
+                         <tr>
+                            <td>${d[i]['rowId']}</td>
+                            <td>${d[i]['orderId']}</td>
+                            <td>${d[i]['orderDate']}</td>
+                            <td>${d[i]['customerId']}</td>
+                            <td>${d[i]['customerName']}</td>
+                            <td>${d[i]['segment']}</td>
+                            <td>${d[i]['country']}</td>
+                            <td>${d[i]['state']}</td>
+                            <td>${d[i]['postalCode']}</td>
+                            <td>${d[i]['region']}</td>
+                            <td>${d[i]['productId']}</td>
+                            <td>${d[i]['category']}</td>
+                            <td>${d[i]['subCategory']}</td>
+                            <td>${d[i]['productName']}</td>
+                            <td>${d[i]['sales']}</td>
+                            <td>${d[i]['quantity']}</td>
+                            <td>${d[i]['discount']}</td>
+                            <td>${d[i]['profit']}</td>
+
+                        </tr>
+                    `
+                );
+            }
+        });
+    });
+    if (p >=@ViewBag.total) {
+        $(btn).hide();
+    }
+</script>
+@*<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Row ID</th>
+            <th>Order Id</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RowId</td>
+                <td>@item.OrderId</td>
+                <td>@item.OrderDate</td>
+            </tr>
+        }
+    </tbody>
+</table>*@

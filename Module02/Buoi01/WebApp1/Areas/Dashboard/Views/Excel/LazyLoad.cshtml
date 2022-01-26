@@ -1,0 +1,46 @@
+﻿@model List<Superstore>
+<partial name="_Superstore" model="@Model"></partial>
+<script>
+    $(window).scroll(function () {
+        console.log('Scroll top: ', $(this).scrollTop());
+        console.log('Window height: ', $(this).height());
+        console.log('Document height: '$(this).height());
+
+        if ($(this).scrollTop() + $(this).height() + 1 >= $(document).height()) {
+            //load data
+            //Nên kiểm tra lai
+            $.post(`/dashboard/excel/searchjson/${++p}`, { q: '@Context.Request.Query["q"]' }, (d) => {
+                for (var i in d) {
+                    $(sheet).append(
+                        `
+                         <tr>
+                            <td>${d[i]['rowId']}</td>
+                            <td>${d[i]['orderId']}</td>
+                            <td>${d[i]['orderDate']}</td>
+                            <td>${d[i]['customerId']}</td>
+                            <td>${d[i]['customerName']}</td>
+                            <td>${d[i]['segment']}</td>
+                            <td>${d[i]['country']}</td>
+                            <td>${d[i]['state']}</td>
+                            <td>${d[i]['postalCode']}</td>
+                            <td>${d[i]['region']}</td>
+                            <td>${d[i]['productId']}</td>
+                            <td>${d[i]['category']}</td>
+                            <td>${d[i]['subCategory']}</td>
+                            <td>${d[i]['productName']}</td>
+                            <td>${d[i]['sales']}</td>
+                            <td>${d[i]['quantity']}</td>
+                            <td>${d[i]['discount']}</td>
+                            <td>${d[i]['profit']}</td>
+
+                        </tr>
+                    `
+                    );
+                }
+
+            });
+
+        }
+    });
+</script>
+

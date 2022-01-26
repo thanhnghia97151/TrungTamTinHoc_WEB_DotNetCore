@@ -1,0 +1,154 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/js/bootstrap.min.js"></script>
+
+
+        <script src="~/js/jquery-3.6.0.min.js"></script>
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+
+
+                                <li><a class="dropdown-item" href="/dashboard/category">Category</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/image">Image</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/excel/autocomplete">Autocomplete</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/excel/datatable">DataTable</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/excel/lazyload">Lazy</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/dashboard/excel/find">Find</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/excel/loadmore">Load more</a></li>
+                                <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="/role">Role</a></li>
+                                <li><a class="dropdown-item" href="/member">Member</a></li>
+                                
+                                <li><a class="dropdown-item" href="/dashboard/access">Access</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/excel">Excel</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/ajax">Ajax</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/ajax">Province</a></li>
+                                <li><a class="dropdown-item" href="/dashboard/ward">Ward</a></li>
+
+                                <li><hr class="dropdown-divider"></li>
+                                    <li><a href="/room">Room</a></li>
+                                    <li><a href="/timeslot">Time slot</a></li>
+                                    <li><a href="/professor">Professor</a></li>
+                                    <li><a href="/module">Module</a></li>
+                                    <li><a href="/class">Class</a></li>
+                                    <li><a href="/group">Group</a></li>
+                                    <li><a href="/modulegroup">Module Group</a></li>
+                                
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                                    <li><a class="nav-link" href="/auth/logout">Logout</a></li>
+                                    <li><a class="nav-link" href="/auth">Profile</a></li> 
+                        }
+                        else
+                        {
+                                    <li><a class="nav-link" href="/auth/register">Register</a></li>
+                                    <li><a class="nav-link" href="/auth/login">Login</a></li>
+                        }
+
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+        @*<ul>
+            <li><a href="/dashboard/category">Category</a></li>
+            <li><a href="/dashboard/image">Image</a></li>
+            <li><a href="/dashboard/excel/autocomplete">Autocomplete</a></li>
+            <li><a href="/dashboard/excel/datatable">DataTable</a></li>
+            <li><a href="/dashboard/excel/lazyload">Lazy</a></li>
+            <li><a href="/dashboard/excel/find">Find</a></li>
+            <li><a href="/dashboard/excel/loadmore">Load more</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/role">Role</a></li>
+            <li><a href="/member">Member</a></li>
+            <li><a href="/dashboard/access">Access</a></li>
+            <li><a href="/dashboard/excel">Excel</a></li>
+            <li><a href="/dashboard/ajax">Ajax</a></li>
+            <li><a href="/dashboard/ajax">Province</a></li>
+            <li><a href="/dashboard/ward">Ward</a></li>
+            @if (User.Identity.IsAuthenticated)
+            {
+    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="/auth">Profile</a></li>
+ }
+                else
+                {
+    <li><a href="/auth/register">Register</a></li>
+                    <li><a href="/auth/login">Login</a></li>
+}
+
+
+
+        </ul>*@
+
+
+        <ul>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/menu/multiple">Menu Multiple</a></li>
+            <li><a href="/menu/recursion">Menu Multiple Recursion</a></li>
+            <li><a href="/dashboard/chart">Chart</a></li>
+            <li><a href="/dashboard/pdf">Pdf</a></li>
+        </ul>
+        <div>
+            @RenderBody()
+        </div>
+    </body>
+    </html>

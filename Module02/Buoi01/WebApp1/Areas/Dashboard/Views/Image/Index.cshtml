@@ -1,0 +1,134 @@
+﻿@model List<Image>
+
+<div>
+    <a class="btn btn-primary" href="/dashboard/image/create">Create</a>
+    <a class="btn btn-primary" href="/dashboard/image/multiple">Multiple</a>
+    <a class="btn btn-primary" href="/dashboard/image/Icon">Icon</a>
+    <a class="btn btn-primary" href="/dashboard/image/Ajax">Ajax</a>
+    <a class="btn btn-primary" href="/dashboard/image/WebUrl">WebUrl</a>
+    <a class="btn btn-primary" href="/dashboard/image/DownloadCSV">Download CSV</a>
+    <a class="btn btn-primary" href="/dashboard/image/Webcam">Webcam</a>
+    <a class="btn btn-primary" href="/dashboard/image/draganddrop">Drag and Drop</a>
+    <a class="btn btn-primary" href="/dashboard/image/folder">Folder</a>
+    <a class="btn btn-primary" href="/dashboard/image/clipboard">Clipboard</a>
+
+
+</div>
+
+
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Upload Ajax
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form enctype="multipart/form-data" name="frm" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload Image</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label>Chose Image</label>
+                        <input type="file" name="f" accept="image/*" />
+                    </div>
+                    <div>
+                        <button>Save Changes</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button  type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <td>Original</td>
+            <td>Url</td>
+            <td>Type</td>
+            <td>Size</td>
+            <td>
+                Delete
+            </td>
+            <td>Edit</td>
+        </tr>
+    </thead>
+    <tbody id="sheet">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Original</td>
+                <td>
+                    <img width="70" src="~/images/@item.Url" />
+                </td>
+                <td>@item.Type</td>
+                <td>@item.Size</td>
+                <td>
+                    <a href="/dashboard/image/delete/@item.Id">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $(frm).submit(function (ev) {
+        ev.preventDefault();
+        var f = this['f'].files[0];
+        //console.log(f);
+        var fd = new FormData();
+        fd.append('f', f);
+        $.ajax({
+            url: '/dashboard/image/ajax',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: (d) => {
+                //console.log(d);
+
+                // Khi sử dụng return Json(provider.Image.Add()) thì sử dụng cái này
+                if(d==1){
+                    window.location.reload();
+                }
+
+                // Khi retrun json(image) thì sử dụng cái này
+                //$(sheet).append(`
+                //                    <tr>
+                //                          <td>${d['id']}</td>
+                //                            <td>${d['original']}</td>
+                //                            <td>
+                //                                <img width="70" src="/images/${d['url']}" />
+                //                            </td>
+                //                            <td>${d['type']}</td>
+                //                            <td>${d['size']}</td>
+                //                            <td>
+                //                                <a href="/dashboard/image/delete/${d['id']}">
+                //                                    <i class="fas fa-trash"></i>
+                //                                </a>
+                //                            </td>
+
+                //                    </tr>
+                //                `);
+                $(myModal).modal('hide');
+            }
+        });
+    });
+</script>

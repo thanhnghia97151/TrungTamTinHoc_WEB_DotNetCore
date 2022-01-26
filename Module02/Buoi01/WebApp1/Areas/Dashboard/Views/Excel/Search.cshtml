@@ -1,0 +1,32 @@
+﻿
+@model List<WebApp1.Models.Superstore>
+<ul class="pagination">
+    @for (int i = 1; i <= ViewBag.total; i++)
+    {
+        <li class="page-item" ><a class="page-link" href="/dashboard/excel/search/@i?q=@Context.Request.Query["q"]">@i</a></li>
+
+    }
+</ul>
+@{ int p = ViewContext.RouteData.Values["id"] != null ? Convert.ToInt32(ViewContext.RouteData.Values["id"]) : 1;}
+<script>
+    $($('.pagination > li.page-item')[@(p-1)]).addClass('active');
+</script>
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Row ID</th>
+            <th>Order Id</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RowId</td>
+                <td>@item.OrderId</td>
+                <td>@item.OrderDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

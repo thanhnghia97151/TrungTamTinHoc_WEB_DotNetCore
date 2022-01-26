@@ -1,0 +1,61 @@
+﻿@model List<Superstore>
+     <link rel="stylesheet" href="/css/kendo.common.min.css" />
+    <link rel="stylesheet" href="/css/kendo.default.min.css" />
+    <link rel="stylesheet" href="/css/kendo.default.mobile.min.css" />
+    <a class="btn btn-success" href="/dashboard/pdf/manage">Manage</a>
+
+    <button id="pdf" class="btn btn-success">Export PDF</button>
+    <table class="table table-bordered" id="sheet">
+        <thead class="table-dark">
+            <tr>
+                <th>OrderId</th>
+                <th>Product Name</th>
+                <th>Quantify</th>
+                <th>Sales</th>
+                <th>Discount</th>
+                <th>Profit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.Sales</td>
+                <td>@item.Discount</td>
+                <td>@item.Profit</td>
+                
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    
+    
+    <script src="/js/jszip.min.js"></script>
+    
+    <script src="/js/kendo.all.min.js"></script>
+
+    <script>
+        $(pdf).click(()=>{
+                // Convert the DOM element to a drawing using kendo.drawing.drawDOM
+            kendo.drawing.drawDOM($(sheet))
+            .then(function(group) {
+                // Render the result as a PDF file
+                return kendo.drawing.exportPDF(group, {
+                    paperSize: "auto",
+                    margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+                });
+            })
+            .done(function(data) {
+                // Save the PDF file
+                kendo.saveAs({
+                    dataURI: data,
+                    fileName: "Superstore.pdf",
+                    proxyURL: "/dashboard/pdf"
+                });
+            });
+        });
+    </script>
