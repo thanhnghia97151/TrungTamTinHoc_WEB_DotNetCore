@@ -1,6 +1,6 @@
 ﻿create database EShop
 go
-drop table Category;
+--drop table Category;
 create table Category(
 	CategoryId tinyint not null primary key identity(1,1),
 	CategoryName nvarchar(64)not null
@@ -23,9 +23,27 @@ create table Product(
 
 insert into Product(ProductName,Sku,Price,SaleOff,Material,ImageUrl,Description) values
 	(N'Áo mới Cà Mau','23221122',15000,null,N'Vải Cotton',N'Chưa có',N'Chưa có')
+--drop proc AddProduct;
+create proc AddProduct(
+	@ProductId int out,
+	@Name nvarchar(128),
+	@Sku varchar(16),
+	@Price int,
+	@SaleOff decimal = null,
+	@Material nvarchar(32),
+	@ImageUrl nvarchar(32),
+	@Description nvarchar(256)
+)
+as
+begin
+	insert into Product (ProductName,Sku,Price,SaleOff,Material,ImageUrl,Description)
+	values (@Name,@Sku,@Price,@SaleOff,@Material,@ImageUrl,@Description);
+	set @ProductId = SCOPE_IDENTITY();
+end
 
 create table CategoryProduct(
 	CategoryId tinyint not null references Category(CategoryId),
 	ProductId int not null references Product(ProductId)
 )
 
+select * from Product

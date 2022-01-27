@@ -17,5 +17,10 @@ namespace WebApi.Api.Controllers
         {
             return provider.Product.GetProducts();
         }
+        [HttpPost]
+        public int Add(Product obj)
+        {
+            return provider.Product.Add(obj);
+        }
     }
 }

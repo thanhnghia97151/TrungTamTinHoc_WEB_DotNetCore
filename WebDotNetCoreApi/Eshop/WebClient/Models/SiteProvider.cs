@@ -2,6 +2,9 @@
 {
     public class SiteProvider
     {
+
+        //API -> client 2 server khác nhau, Api phụ thuộc đường truyền Internet => Nhanh , Chậm
+
         IConfiguration configuration;
         public SiteProvider(IConfiguration configuration)
         {
@@ -10,6 +13,18 @@
         }
         CategoryRepository category;
         ProductRepository product;
+        UploadRepository upload;
+        public UploadRepository Upload
+        {
+            get
+            {
+                if (upload is null)
+                {
+                    upload = new UploadRepository(configuration);
+                }
+                return upload;
+            }
+        }
         public ProductRepository Product
         {
             get

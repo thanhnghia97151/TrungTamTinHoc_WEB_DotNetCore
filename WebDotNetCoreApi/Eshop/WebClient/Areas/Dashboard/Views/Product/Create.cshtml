@@ -1,0 +1,35 @@
+﻿@model Product
+
+<form method="post" enctype="multipart/form-data">
+    <div>
+        <lable asp-for="ProductName">Name</lable>
+        <input type="text" asp-for="ProductName" />
+    </div>
+    <div>
+        <lable asp-for="Sku">Sku</lable>
+        <input type="text" asp-for="Sku" />
+    </div>
+    <div>
+        <lable asp-for="Material">Material</lable>
+        <input type="text" asp-for="Material" />
+    </div>
+    <div>
+        <lable asp-for="Price">Price</lable>
+        <input type="number" asp-for="Price" />
+    </div>
+    <div>
+        <lable asp-for="SaleOff">SaleOff</lable>
+        <input type="number" step="0.001" asp-for="SaleOff" />
+    </div>
+    <div>
+        <lable asp-for="ImageUrl">ImageUrl</lable>
+        <input type="file" accept="image/*" name="f" asp-for="ImageUrl" />
+    </div>
+    <div>
+        <lable asp-for="Description">Description</lable>
+        <textarea type="text" asp-for="Description" ></textarea>
+    </div>
+    <div>
+        <button>Save Changes</button>
+    </div>
+</form>

@@ -27,3 +27,4 @@ D:\TrungTamTinHoc_DHKH-TN\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\runtime
 D:\TrungTamTinHoc_DHKH-TN\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\TrungTamTinHoc_DHKH-TN\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\TrungTamTinHoc_DHKH-TN\WebDotNetCoreApi\Eshop\WebApi\obj\Debug\net6.0\WebApi.csproj.CopyComplete
+D:\TrungTamTinHoc_DHKH-TN\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\WebApi.staticwebassets.runtime.json
