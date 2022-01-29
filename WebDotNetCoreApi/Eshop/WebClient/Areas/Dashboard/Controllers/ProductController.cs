@@ -16,12 +16,13 @@ namespace WebClient.Areas.Dashboard.Controllers
 
             return View(await provider.Product.GetProducts());
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.categories = await provider.Category.GetCategories();
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(IFormFile f, Product product)
+        public async Task<IActionResult> Create(IFormFile f, Product product,int[] cid)
         {
             if (f!=null)
             {
@@ -29,7 +30,17 @@ namespace WebClient.Areas.Dashboard.Controllers
                 {
                     Image image = await provider.Upload.Add(f);
                     product.ImageUrl = image.ImageUrl;
-                    int ret = await provider.Product.Add(product);
+                    int productId = await provider.Product.Add(product);
+                    List<CategoryProduct> list = new List<CategoryProduct>();
+                    foreach (int id in cid)
+                    {
+                        list.Add(new CategoryProduct
+                        {
+                            ProductId = productId,
+                            CategoryId = id
+                        }) ;
+                    }
+                    await provider.CategoryProduct.Add(list);
                     return Redirect("/dashboard/product");
                 }
                 catch (Exception ex)

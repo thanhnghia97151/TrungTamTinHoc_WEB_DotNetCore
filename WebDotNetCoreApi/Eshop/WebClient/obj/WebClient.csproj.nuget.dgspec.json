@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj": {}
+    "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj": {}
   },
   "projects": {
-    "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj": {
+    "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj",
+        "projectUniqueName": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj",
         "projectName": "WebClient",
-        "projectPath": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj",
+        "projectPath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj",
         "packagesPath": "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\",
-        "outputPath": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\obj\\",
+        "outputPath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ThanhNghiaPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -17,6 +17,18 @@ namespace WebApi.Models
         }
         ProductRepository product;
         CategoryRepository category;
+        CategoryProductRepository categoryProduct;
+        public CategoryProductRepository CategoryProduct
+        {
+            get
+            {
+                if (categoryProduct == null)
+                {
+                    categoryProduct = new CategoryProductRepository(connection);
+                }
+                return categoryProduct; 
+            }
+        }
         public ProductRepository Product
         {
             get

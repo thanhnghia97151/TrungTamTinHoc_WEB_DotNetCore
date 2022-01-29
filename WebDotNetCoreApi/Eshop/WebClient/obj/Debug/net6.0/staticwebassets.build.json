@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7UZ7rDhuZBe3JUYVdZE7tQycnWNI+kdBugjHgqFoltc=",
+  "Hash": "uWui+ZuzCZDwMARrRJM0bD74L0uOqPT4kwo6XBohJrQ=",
   "Source": "WebClient",
   "BasePath": "_content/WebClient",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WebClient\\wwwroot",
       "Source": "WebClient",
-      "ContentRoot": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\",
+      "ContentRoot": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\",
       "BasePath": "_content/WebClient",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\css\\styles.css",
+      "Identity": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\css\\styles.css",
       "SourceId": "WebClient",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\",
+      "ContentRoot": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\",
       "BasePath": "_content/WebClient",
       "RelativePath": "css/styles.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
-      "Identity": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\js\\scripts.js",
+      "Identity": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\js\\scripts.js",
       "SourceId": "WebClient",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\",
+      "ContentRoot": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\wwwroot\\",
       "BasePath": "_content/WebClient",
       "RelativePath": "js/scripts.js",
       "AssetKind": "All",

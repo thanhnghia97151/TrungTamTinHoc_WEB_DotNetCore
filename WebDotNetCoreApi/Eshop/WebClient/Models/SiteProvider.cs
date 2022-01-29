@@ -14,6 +14,18 @@
         CategoryRepository category;
         ProductRepository product;
         UploadRepository upload;
+        CategoryProductRepository categoryProduct;
+        public CategoryProductRepository CategoryProduct
+        {
+            get
+            {
+                if (categoryProduct is null)
+                {
+                    categoryProduct = new CategoryProductRepository(configuration);
+                }
+                return categoryProduct;
+            }
+        }
         public UploadRepository Upload
         {
             get

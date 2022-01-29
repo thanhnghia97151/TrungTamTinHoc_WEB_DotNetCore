@@ -482,24 +482,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebApi\\WebApi.csproj",
+      "projectPath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\",
-      "outputPath": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebApi\\obj\\",
+      "outputPath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\ThanhNghiaPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

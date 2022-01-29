@@ -2,6 +2,31 @@
 
 <form method="post" enctype="multipart/form-data">
     <div>
+        <table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Checked</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        
+            @foreach (Category item in ViewBag.categories)
+        {
+            <tr>
+            <td>@item.CategoryName</td>
+            <td>
+                <input type="checkbox" name="cid" value="@item.CategoryId"/>
+            </td>
+            </tr>
+        }
+        
+        
+    </tbody>
+</table>
+    </div>
+    <div>
         <lable asp-for="ProductName">Name</lable>
         <input type="text" asp-for="ProductName" />
     </div>
@@ -33,3 +58,4 @@
         <button>Save Changes</button>
     </div>
 </form>
+

@@ -20,7 +20,17 @@ namespace WebApi.Api.Controllers
         [HttpPost]
         public int Add(Product obj)
         {
-            return provider.Product.Add(obj);
+            int ret = provider.Product.Add(obj);
+            if (ret > 0)
+            {
+                return obj.ProductId;
+            }
+            else return 0;
+        }
+        [HttpPost("addlist")]
+        public  int Add(List<CategoryProduct> list)
+        {
+            return  provider.CategoryProduct.Add(list);
         }
     }
 }

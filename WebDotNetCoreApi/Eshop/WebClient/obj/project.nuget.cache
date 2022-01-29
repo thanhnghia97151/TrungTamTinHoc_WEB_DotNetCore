@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C9HiCFkisVx5rfEaF2X90nBNxYZsBFbzU4NdFFtIWQ1pzXn21Dd4p04AWkQVZ8d6OGCkadA7fGk/DBTVtwPcUQ==",
+  "dgSpecHash": "MX5dKNwdgcfXiH1jWceQXVAImPqPnQrYSblfRhi2tdb+tM3v4W8P37dUYLfyJYsrSXQppSict/GUcJOrS3cmmQ==",
   "success": true,
-  "projectFilePath": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj",
+  "projectFilePath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

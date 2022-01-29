@@ -40,10 +40,11 @@ begin
 	values (@Name,@Sku,@Price,@SaleOff,@Material,@ImageUrl,@Description);
 	set @ProductId = SCOPE_IDENTITY();
 end
-
+-- Khó chịu mối quan hệ nhiều - nhiều 
 create table CategoryProduct(
 	CategoryId tinyint not null references Category(CategoryId),
 	ProductId int not null references Product(ProductId)
 )
 
-select * from Product
+select * from Category
+select * from CategoryProduct

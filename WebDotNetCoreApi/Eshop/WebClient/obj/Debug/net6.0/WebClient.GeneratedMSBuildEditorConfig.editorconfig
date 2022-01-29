@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebClient
 build_property.RootNamespace = WebClient
-build_property.ProjectDir = D:\TrungTamTinHoc_DHKH-TN\WebDotNetCoreApi\Eshop\WebClient\
+build_property.ProjectDir = D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\TrungTamTinHoc_DHKH-TN\WebDotNetCoreApi\Eshop\WebClient
+build_property.MSBuildProjectDirectory = D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Category/Edit.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXENhdGVnb3J5XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Category/Index.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Home/Index.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Product/Create.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFByb2R1Y3RcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Product/Index.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFByb2R1Y3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Shared/_Layout.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Upload/Index.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/Upload/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXFVwbG9hZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/_ViewImports.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/_ViewStart.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Areas/Dashboard/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRGFzaGJvYXJkXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Views/Home/Index.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/TrungTamTinHoc_DHKH-TN/WebDotNetCoreApi/Eshop/WebClient/Views/_ViewImports.cshtml]
+[D:/TrungTamTinHoc_WEB_DotNetCore/WebDotNetCoreApi/Eshop/WebClient/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

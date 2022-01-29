@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XoiS76D6dkTmpjrsFE+9KWPOW6bmQEguH3N0eTbFrRKZX69tiZS2Y0uwVzq7BeHgpeARU+4KyRMMSF4Wi7U/NA==",
+  "dgSpecHash": "xkQDd6gSqhmxTgv4PnlkM4+eYZxJNuttbZjUqdu9rSMaRFmr4szvypHdUpKX+ihiuLaCWbe7WEyPz4nqz3EwEw==",
   "success": true,
-  "projectFilePath": "D:\\TrungTamTinHoc_DHKH-TN\\WebDotNetCoreApi\\Eshop\\WebApi\\WebApi.csproj",
+  "projectFilePath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
