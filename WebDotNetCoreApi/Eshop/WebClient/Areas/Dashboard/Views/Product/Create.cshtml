@@ -1,5 +1,9 @@
 ﻿@model Product
-
+<link rel="stylesheet" href="/css/kendo.common.min.css" />
+<link rel="stylesheet" href="/css/kendo.default.min.css" />
+<link rel="stylesheet" href="/css/kendo.default.mobile.min.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/kendo.all.min.js"></script>
 <form method="post" enctype="multipart/form-data">
     <div>
         <table>
@@ -17,6 +21,7 @@
             <tr>
             <td>@item.CategoryName</td>
             <td>
+                
                 <input type="checkbox" name="cid" value="@item.CategoryId"/>
             </td>
             </tr>
@@ -52,10 +57,69 @@
     </div>
     <div>
         <lable asp-for="Description">Description</lable>
-        <textarea type="text" asp-for="Description" ></textarea>
+        <textarea id="editor" type="text" asp-for="Description" ></textarea>
     </div>
     <div>
         <button>Save Changes</button>
     </div>
 </form>
-
+ <script>
+            var editor = $("#editor").kendoEditor({
+                stylesheets: [
+                    "../content/shared/styles/editor.css",
+                ],
+                tools: [
+                    "bold",
+                    "italic",
+                    "underline",
+                    "undo",
+                    "redo",
+                    "justifyLeft",
+                    "justifyCenter",
+                    "justifyRight",
+                    "insertUnorderedList",
+                    "createLink",
+                    "unlink",
+                    "insertImage",
+                    "tableWizard",
+                    "createTable",
+                    "addRowAbove",
+                    "addRowBelow",
+                    "addColumnLeft",
+                    "addColumnRight",
+                    "deleteRow",
+                    "deleteColumn",
+                    "mergeCellsHorizontally",
+                    "mergeCellsVertically",
+                    "splitCellHorizontally",
+                    "splitCellVertically",
+                    "tableAlignLeft",
+                    "tableAlignCenter",
+                    "tableAlignRight",
+                    "formatting",
+                    {
+                        name: "fontName",
+                        items: [
+                            { text: "Andale Mono", value: "\"Andale Mono\"" }, // Font-family names composed of several words should be wrapped in \" \"
+                            { text: "Arial", value: "Arial" },
+                            { text: "Arial Black", value: "\"Arial Black\"" },
+                            { text: "Book Antiqua", value: "\"Book Antiqua\"" },
+                            { text: "Comic Sans MS", value: "\"Comic Sans MS\"" },
+                            { text: "Courier New", value: "\"Courier New\"" },
+                            { text: "Georgia", value: "Georgia" },
+                            { text: "Helvetica", value: "Helvetica" },
+                            { text: "Impact", value: "Impact" },
+                            { text: "Symbol", value: "Symbol" },
+                            { text: "Tahoma", value: "Tahoma" },
+                            { text: "Terminal", value: "Terminal" },
+                            { text: "Times New Roman", value: "\"Times New Roman\"" },
+                            { text: "Trebuchet MS", value: "\"Trebuchet MS\"" },
+                            { text: "Verdana", value: "Verdana" },
+                        ]
+                    },
+                    "fontSize",
+                    "foreColor",
+                    "backColor",
+                ]
+            });
+        </script>

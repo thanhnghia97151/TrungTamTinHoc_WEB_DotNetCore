@@ -13,5 +13,12 @@ namespace WebApi.Models
         {
             return connection.Execute("insert into CategoryProduct values (@CategoryId,@ProductId)", list); 
         }
+        public int Edit(List<CategoryProduct> list, int id)
+        {
+            string sql = "delete from CategoryProduct where ProductId = @Id";
+            int ret = connection.Execute(sql, new { Id = id });
+            ret+= Add(list); 
+            return ret;
+        }
     }
 }

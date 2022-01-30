@@ -14,9 +14,32 @@ namespace WebApi.Models
             // Nhung phải tự quản lý được connection
             this.connection = connection; 
         }
+        public IEnumerable<Product> GetProductByCatogoryRelation(int pid)
+        {
+            return connection.Query<Product>("ProductsRelation", new { ProductId=pid }, commandType: CommandType.StoredProcedure);
+        }
+        public IEnumerable<Product> GetProductByCatogory(int id)
+        {
+            return connection.Query<Product>("GetProductByCategory @Id", new { Id = id });
+        }
         public IEnumerable<Product> GetProducts()
         {
             return connection.Query<Product>("select * from Product");
+        }
+        public int Edit(Product obj)
+        {
+            return connection.Execute("EditProduct", new
+            {
+                ProductId = obj.ProductId,
+                ProductName = obj.ProductName,
+                Sku = obj.Sku,
+                Price = obj.Price,
+                SaleOff=obj.SaleOff,
+                ImageUrl = obj.ImageUrl,
+                Material = obj.Material,
+                Description = obj.Description
+            }
+                ,commandType: CommandType.StoredProcedure);
         }
         public int Add(Product obj)
         {
@@ -33,5 +56,10 @@ namespace WebApi.Models
             obj.ProductId = parameters.Get<int>("@ProductId");
             return ret;
         }
+        public Product GetProductById(int id)
+        {
+            return connection.QueryFirstOrDefault<Product>("select * from Product where ProductId = @Id", new { Id = id });
+        }
+
     }
 }

@@ -18,6 +18,13 @@ namespace WebApi.Models
                 return connection.Execute("insert into Category (CategoryName) values (@Name)", new { Name = obj.CategoryName });
             }
         }
+        public IEnumerable<CategoryChecked> GetCategoriesByProduct(int id)
+        {
+            using (IDbConnection connection = new SqlConnection(connectionString))
+            {
+                return connection.Query<CategoryChecked>("GetCategoryByProduct",new { Id = id },commandType:CommandType.StoredProcedure);
+            }
+        }
         public IEnumerable<Category> GetCategories()
         {
             //Naive

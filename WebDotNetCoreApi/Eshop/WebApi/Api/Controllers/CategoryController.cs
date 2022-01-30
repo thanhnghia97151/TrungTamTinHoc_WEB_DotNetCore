@@ -47,5 +47,11 @@ namespace WebApi.Api.Controllers
         // {
         //     return "Welcome!";
         // }
+
+        [HttpGet("checked/{id}")]
+        public IEnumerable<CategoryChecked> GetCategoryChecked(int id)
+        {
+            return provider.Category.GetCategoriesByProduct(id);
+        }
     }
 }

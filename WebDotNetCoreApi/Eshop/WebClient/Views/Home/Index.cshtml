@@ -1,14 +1,7 @@
-﻿@model List<Category>
-<ul>
-    <li>
-        <a href="/dashboard/category">Category</a>
-    </li>
-    <li>
-        <a href="/dashboard/product">Product</a>
-    </li>
-    <li>
-        <a href="/dashboard/upload">Upload</a>
-    </li>
-</ul>
+﻿@model List<Product>
+@{
+    ViewBag.Title = "EShop";
+}
+<partial name="_Home" model="@Model"/>
 
 

@@ -1,0 +1,8 @@
+﻿@model Product
+<h2>@Model.ProductName</h2>
+<p>Ski: <b>@Model.Sku</b></p>
+<p>Price: <b>@Model.Price</b></p>
+<p><img src="https://localhost:44318/images/@Model.ImageUrl" width="70"/></p>
+<p>Description: 
+    @Html.Raw(System.Web.HttpUtility.HtmlDecode(@Model.Description))</p>
+<div><a href="/dashboard/product">Come back</a></div>

@@ -1,0 +1,26 @@
+﻿
+<div class="row">
+    <div class="col-3">
+        <ul>
+            @foreach(Category item in @ViewBag.categories)
+            {
+                <li><a href="/home/category/@item.CategoryId">@item.CategoryName</a></li>
+            }
+        </ul>
+    </div>
+    <div class="col-9">
+        <div class="row">
+            @foreach(var item in Model)
+            {
+                <div class="col-6">
+                    <h2>
+                    <a href="/home/detail/@item.ProductId">@item.ProductName</a>
+                    </h2>
+                    <p>Price: @item.Price</p>
+                    <p>Sku:@item.Sku</p>
+                    <div><img class="img-fluid" src="https://localhost:44318/images/@item.ImageUrl"/></div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -74,5 +74,19 @@
                 return 0;
             }
         }
+
+        public async Task<List<CategoryChecked>> GetCategoriesByProductId(int id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(root);
+                HttpResponseMessage message = await client.GetAsync($"/api/category/checked/{id}");
+                if (message.IsSuccessStatusCode)
+                {
+                    return await message.Content.ReadAsAsync<List<CategoryChecked>>();
+                }
+                return null;
+            }
+        }
     }
 }
