@@ -108,8 +108,8 @@ create table AutoSendMail(
 )
 
 insert into AutoSendMail(Email,Subject,Body,SendDate) values
-	('nguyenthanhnghia0907@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 00:00:00'),
-	('nguyenthanhnghia009007@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 18:00:00')
+	('nguyenthanhnghia0907@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 1:00:00'),
+	('nguyenthanhnghia009007@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 13:00:00')
 
 	insert into AutoSendMail(Email,Subject,Body,SendDate) values
 	('ngynhi0907@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 18:00:00')
