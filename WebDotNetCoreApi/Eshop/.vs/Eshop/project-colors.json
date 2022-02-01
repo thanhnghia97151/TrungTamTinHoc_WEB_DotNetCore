@@ -15,7 +15,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "e11e25db-1d40-45a2-8cd6-0beed796709b": {
+      "ProjectGuid": "e11e25db-1d40-45a2-8cd6-0beed796709b",
+      "DisplayName": "WorkerServiceAutoSendMail",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

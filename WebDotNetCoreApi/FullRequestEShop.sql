@@ -98,3 +98,19 @@ as
 	go
 exec ProductsRelation @ProductId =1 
 
+create table AutoSendMail(
+	AutoSendMailId int not null primary key identity(1,1),
+	Email varchar(64) not null,
+	Subject nvarchar(64) not null,
+	Body nvarchar(max) not null,
+	SendDate datetime not null,
+	IsSend bit not null default 0
+)
+
+insert into AutoSendMail(Email,Subject,Body,SendDate) values
+	('nguyenthanhnghia0907@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 00:00:00'),
+	('nguyenthanhnghia009007@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 18:00:00')
+
+	insert into AutoSendMail(Email,Subject,Body,SendDate) values
+	('ngynhi0907@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 18:00:00')
+select * from AutoSendMail where IsSend =0 and SendDate <= GETDATE();

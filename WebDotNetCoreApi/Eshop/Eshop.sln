@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{D706ECA1-CDFC-46CC-8C3A-0C9D3C67B700}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{6F2A1F43-88EE-4522-954E-4067F8D2DB0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient\WebClient.csproj", "{6F2A1F43-88EE-4522-954E-4067F8D2DB0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerServiceAutoSendMail", "WorkerServiceAutoSendMail\WorkerServiceAutoSendMail.csproj", "{E11E25DB-1D40-45A2-8CD6-0BEED796709B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6F2A1F43-88EE-4522-954E-4067F8D2DB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F2A1F43-88EE-4522-954E-4067F8D2DB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F2A1F43-88EE-4522-954E-4067F8D2DB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E11E25DB-1D40-45A2-8CD6-0BEED796709B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E11E25DB-1D40-45A2-8CD6-0BEED796709B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E11E25DB-1D40-45A2-8CD6-0BEED796709B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E11E25DB-1D40-45A2-8CD6-0BEED796709B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
