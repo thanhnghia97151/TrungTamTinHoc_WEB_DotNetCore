@@ -15,6 +15,32 @@
         ProductRepository product;
         UploadRepository upload;
         CategoryProductRepository categoryProduct;
+        AutoSendMailRepository autoSendMail;
+        CartRepository cart;
+        public CartRepository Cart 
+        { 
+            get
+            {
+                if (cart is null)
+                {
+                    cart = new CartRepository(configuration);
+                }
+                return cart;
+            }
+        }
+        public AutoSendMailRepository AutoSendMail 
+        {
+            get
+            {
+                if (autoSendMail is null)
+                {
+                    autoSendMail = new AutoSendMailRepository(configuration);
+                }
+                return autoSendMail;
+            }
+                
+                
+        }
         public CategoryProductRepository CategoryProduct
         {
             get

@@ -1,0 +1,60 @@
+﻿@model List<Cart>
+<div class="card">
+    <div class="accordion-header">
+        <h2>Your cart</h2>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int s = 0;}
+                @foreach(var item in Model)
+                {
+                    s += item.Price.Value * item.Quantity;
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td><img width="70" src="https://localhost:44318/images/@item.ImageUrl" /></td>
+                        <td>@item.Price</td>
+                        <td>
+                            <input v="@item.ProductId" type="number" name="qty" value="@item.Quantity" min="1" max="10"/>
+                        </td>
+                        <td>
+                            @(item.Price*item.Quantity)
+                        </td>
+                        <td><a href="/cart/delete/@item.ProductId">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Total</th>
+                    
+                    <td>@(s)</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<script>
+    $('input[name="qty"]').click(function(){
+        var qty = $(this).val();
+        //console.log(qty);
+        var pid=$(this).attr('v');
+        //console.log(pid);
+        $.post('/cart/edit',{productId:pid,quantity:qty},(d)=>{
+            //console.log(d);
+            if(d==1){
+                window.location.reload();
+            }
+        });
+    });
+</script>

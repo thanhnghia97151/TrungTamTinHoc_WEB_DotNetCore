@@ -1,0 +1,25 @@
+﻿@model List<AutoSendMail>
+<a class="btn btn-success" href="/dashboard/autosendmail/create">Create</a>
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Body</th>
+            <th>SendDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.AutoSendMailId</td>
+                <td>@item.Email</td>
+                <td>@item.Subject</td>
+                <td>@item.Body</td>
+                <td>@item.SendDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

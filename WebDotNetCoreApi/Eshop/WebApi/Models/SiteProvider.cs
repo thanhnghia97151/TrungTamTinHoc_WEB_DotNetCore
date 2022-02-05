@@ -18,6 +18,30 @@ namespace WebApi.Models
         ProductRepository product;
         CategoryRepository category;
         CategoryProductRepository categoryProduct;
+        AutoSendMailRepository autoSendMail;
+        CartRepository cart;
+        public CartRepository Cart 
+        {
+            get
+            {
+                if (cart is null)
+                {
+                    cart = new CartRepository(connection);
+                }
+                return cart;
+            } 
+        }
+        public AutoSendMailRepository AutoSendMail
+        {
+            get
+            {
+                if (autoSendMail is null)
+                {
+                    autoSendMail = new AutoSendMailRepository(connection);
+                }
+                return autoSendMail;
+            }
+        }
         public CategoryProductRepository CategoryProduct
         {
             get

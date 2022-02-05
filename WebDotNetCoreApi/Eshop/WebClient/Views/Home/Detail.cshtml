@@ -11,6 +11,11 @@
         {
             <p>SaleOff: @Model.SaleOff</p>
         }
+        <form method="post" action="/cart/add">
+                        <input name="quantity" type="number" min="1" max="10" />
+                        <input type="hidden" name="productId" value="@Model.ProductId"/>
+                        <button class="btn btn-primary">Add to Cart</button>
+        </form>
         <div><img class="img-fluid" src="https://localhost:44318/images/@Model.ImageUrl"/></div>
         <p>Description: </p>
         <div>@Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.Description))</div>
@@ -28,6 +33,7 @@
                     </h2>
                     <p>Price: @item.Price</p>
                     <p>Sku:@item.Sku</p>
+                    
                     <div><img class="img-fluid" src="https://localhost:44318/images/@item.ImageUrl"/></div>
                 </div>
             }

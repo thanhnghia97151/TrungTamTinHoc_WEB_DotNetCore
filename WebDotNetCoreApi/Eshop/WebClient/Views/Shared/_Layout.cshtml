@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/css/bootstrap.css" rel="stylesheet" />
+   <link href="~/css/all.min.css" rel="stylesheet"/>
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/bootstrap.js"></script>
 </head>
@@ -40,12 +41,24 @@
                 <li>
                     <a class="dropdown-item" href="/dashboard/upload">Upload</a>
                 </li>
-
+                <li>
+                    <a class="dropdown-item" href="/dashboard/autosendmail">AutoSendMail</a>
+                </li>
              
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+        <li class="nav-item">
+            @if(ViewBag.total != 0)
+                    {
+                        <a class="nav-link" href="/cart">
+                            <i class="fas fa-shopping-cart"></i>    
+                            <b>@ViewBag.total</b>
+                        </a>
+                    }
+            
         </li>
       </ul>
       <form class="d-flex">

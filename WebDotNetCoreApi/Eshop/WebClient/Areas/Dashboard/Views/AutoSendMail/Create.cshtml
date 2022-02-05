@@ -1,0 +1,23 @@
+﻿@model AutoSendMail
+
+<form method="post">
+    <div>
+        <label asp-for="Email">Email</label>
+        <input type="email" asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Subject">Subject</label>
+        <input type="text" asp-for="Subject" />
+    </div>
+    <div>
+        <label asp-for="Body">Body</label>
+        <textarea asp-for="Body" ></textarea>
+    </div>
+    <div>
+        <label asp-for="SendDate">SendDate</label>
+        <input type="datetime" asp-for="SendDate" />
+    </div>
+    <div>
+        <button>Save Changes</button>
+    </div>
+</form>

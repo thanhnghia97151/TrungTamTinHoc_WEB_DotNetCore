@@ -113,4 +113,38 @@ insert into AutoSendMail(Email,Subject,Body,SendDate) values
 
 	insert into AutoSendMail(Email,Subject,Body,SendDate) values
 	('ngynhi0907@gmail.com',N'Auto Test Send Mail',N'Content for Email','2021/12/31 18:00:00')
-select * from AutoSendMail where IsSend =0 and SendDate <= GETDATE();
+select * from AutoSendMail where IsSend =0 ;
+
+--drop table Cart;
+create table Cart(
+	CartId varchar(32) not null,
+	ProductId int not null,
+	Quantity smallint not null,
+	CartDate datetime not null default GETDATE(),
+	primary key (CartId,ProductId)
+
+)
+-- drop proc AddCart;
+create proc AddCart(
+	@CartId varchar(32) ,
+	@ProductId int,
+	@Quantity smallint
+)
+as
+	begin
+		if exists(select * from Cart where CartId=@CartId and ProductId=@ProductId)
+			update Cart set Quantity += @Quantity where CartId = @CartId and ProductId = @ProductId;
+		else
+			insert into Cart(CartId,ProductId,Quantity) values (@CartId,@ProductId,@Quantity)
+	end
+go
+--drop proc GetCarts;
+create proc GetCarts(@Id varchar(64))
+as
+begin
+	select Cart.*,ProductName,Price,ImageUrl from Cart join Product on Cart.ProductId=Product.ProductId 
+	where CartId = @Id;
+end
+
+select * from Cart
+delete from Cart where CartId ='jz3wox37eaaqnzhlx9p7s1c49kfzqn4h' and ProductId=1
