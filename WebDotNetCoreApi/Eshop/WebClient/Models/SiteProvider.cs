@@ -17,6 +17,18 @@
         CategoryProductRepository categoryProduct;
         AutoSendMailRepository autoSendMail;
         CartRepository cart;
+        MemberRepository member;
+        public MemberRepository Member
+        {
+            get
+            {
+                if (member is null)
+                {
+                    member = new MemberRepository(configuration);
+                }
+                return member;
+            }
+        }
         public CartRepository Cart 
         { 
             get

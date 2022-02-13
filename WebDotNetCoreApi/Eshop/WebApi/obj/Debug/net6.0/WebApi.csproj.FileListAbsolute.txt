@@ -58,3 +58,10 @@ D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\obj\Debug\net6.0\
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\obj\Debug\net6.0\ref\WebApi.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\obj\Debug\net6.0\WebApi.pdb
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

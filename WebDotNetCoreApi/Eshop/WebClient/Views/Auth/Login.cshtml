@@ -1,0 +1,19 @@
+﻿@model LoginModel
+<div asp-validation-summary="All"></div>
+<form method="post">
+    <div>
+        <label>UserName</label>
+        <input type="text" asp-for="Urs"/>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" asp-for="Pwd"/>
+    </div>
+    <div>
+        <label>Remember Me!</label>
+        <input type="checkbox" asp-for="Rem"/>
+    </div>
+    <dib>
+        <button>Login</button>
+    </dib>
+</form>

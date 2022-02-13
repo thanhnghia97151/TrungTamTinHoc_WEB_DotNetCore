@@ -148,3 +148,25 @@ end
 
 select * from Cart
 delete from Cart where CartId ='jz3wox37eaaqnzhlx9p7s1c49kfzqn4h' and ProductId=1
+--drop table Member;
+create table Member(
+	MemberId varchar(64) not null primary key,
+	UserName varchar(32) not null unique,
+	Password varbinary(64) not null,
+	Email varchar(64) not null,
+	Gender bit not null
+
+)
+
+create table Role(
+	RoleId uniqueidentifier not null primary key default NewId(),
+	RoleName varchar(16) not null
+)
+--drop table MemberInRole;
+create table MemberInRole(
+	MemberId varchar(64) not null,
+	RoleId uniqueIdentifier not null,
+	Primary key (MemberId,RoleId)
+)
+select * from Member
+select * from Member where UserName='nghia' 
