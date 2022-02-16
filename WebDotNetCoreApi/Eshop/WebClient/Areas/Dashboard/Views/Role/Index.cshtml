@@ -1,0 +1,10 @@
+﻿@model List<Role>
+<table>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.RoleId</td>
+            <td>@item.RoleName</td>
+        </tr>
+    }
+</table>

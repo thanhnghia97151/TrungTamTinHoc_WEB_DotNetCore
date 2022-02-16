@@ -1,5 +1,8 @@
-﻿namespace WebClient.Models
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace WebClient.Models
 {
+    
     public class MemberRepository : BaseRepository
     {
         public MemberRepository(IConfiguration configuration) : base(configuration)
@@ -17,5 +20,9 @@
         {
             return await Get<Member>("/api/auth", token);
         }
+        public async Task<List<Member>> GetMemberAsync()
+        {
+            return await Get<List<Member>>("/api/member");
+        } 
     }
 }

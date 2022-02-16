@@ -30,16 +30,26 @@ namespace WebApi
         {
             byte[] key = Encoding.ASCII.GetBytes("qwertyuiopasdfghjklzxcvbnm");
             JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
-            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor
+            List<Claim> claims = new List<Claim>
             {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.NameIdentifier,obj.MemberId),
+                new Claim(ClaimTypes.NameIdentifier,obj.MemberId),
                    new Claim(ClaimTypes.Name,obj.UserName),
                    new Claim(ClaimTypes.Email,obj.Email),
                    new Claim(ClaimTypes.Gender,obj.Gender.ToString())
                    //new Claim(ClaimTypes.Role,obj.Role)
-                }),
+            };
+            //Role
+            if(obj.Roles != null)
+            {
+                foreach(string role in obj.Roles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+
+                }
+            }
+            SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)
             };

@@ -23,15 +23,24 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/register">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/logout">Logout</a>
-        </li>
+        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                             <form method="post" action="/auth/logout"><button>Logout</button></form>
+                            </li>
+                            
+                        }
+                        else
+                        {
+                             <li class="nav-item">
+                              <a class="nav-link" href="/auth/register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="/auth/login">Login</a>
+                            </li>
+                        }
+                       
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -49,6 +58,9 @@
                 </li>
                 <li>
                     <a class="dropdown-item" href="/dashboard/autosendmail">AutoSendMail</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="/dashboard/member">Member</a>
                 </li>
              
           </ul>

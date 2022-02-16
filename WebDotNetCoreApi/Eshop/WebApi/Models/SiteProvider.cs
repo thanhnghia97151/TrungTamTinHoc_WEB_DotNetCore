@@ -21,6 +21,81 @@ namespace WebApi.Models
         AutoSendMailRepository autoSendMail;
         CartRepository cart;
         MemberRepository member;
+        RoleRepository role;
+        MemberInRoleRepository memberInRole;
+        ProvinceRepository province;
+        DistrictRepository district;
+        WardRepository ward;
+        InvoiceRepository invoice;
+
+        public InvoiceRepository Invoice
+        {
+            get
+            {
+                if (invoice is null)
+                {
+                    invoice = new InvoiceRepository(connection);
+                }
+                return invoice;
+            }
+        }
+
+        public WardRepository Ward
+        {
+            get
+            {
+                if (ward is null)
+                {
+                    ward = new WardRepository(connection);
+                }
+                return ward;
+            }
+        }
+        public DistrictRepository District
+        {
+            get
+            {
+                if (district is null)
+                {
+                    district = new DistrictRepository(connection);
+                }
+                return district;
+            }
+        }
+        
+        public ProvinceRepository Province
+        {
+            get
+            {
+                if (province is null)
+                {
+                    province = new ProvinceRepository(connection);
+                }
+                return province;
+            }
+        }
+        public MemberInRoleRepository MemberInRole
+        {
+            get
+            {
+                if (memberInRole is null)
+                {
+                    memberInRole = new MemberInRoleRepository(connection);
+                }
+                return memberInRole;
+            }
+        }
+        public RoleRepository Role
+        {
+            get
+            {
+                if (role is null)
+                {
+                    role = new RoleRepository(connection);
+                }
+                return role;
+            }
+        }
         public MemberRepository Member
         {
             get

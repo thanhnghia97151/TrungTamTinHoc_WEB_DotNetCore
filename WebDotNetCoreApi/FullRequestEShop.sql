@@ -166,7 +166,123 @@ create table Role(
 create table MemberInRole(
 	MemberId varchar(64) not null,
 	RoleId uniqueIdentifier not null,
+	IsDeleted bit not null default 0,
 	Primary key (MemberId,RoleId)
 )
 select * from Member
 select * from Member where UserName='nghia' 
+
+create proc AddMemberInRole(
+	@MemberId varchar(64),
+	@RoleId uniqueidentifier
+)
+as
+begin
+	if	exists(select * from MemberInRole where MemberId = @MemberId and RoleId =@RoleId)
+		update MemberInRole set IsDeleted = ~IsDeleted where MemberId = @MemberId and RoleId = @RoleId;
+	else 
+		insert into MemberInRole (MemberId,RoleId) values (@MemberId,@RoleId);
+end
+--drop proc GetRolesByMember;
+create proc GetRolesByMember(@Id varchar(64))
+as
+	select Role.*,iif(MemberId is null,0,1) as Checked from Role left join MemberInRole on Role.RoleId=MemberInRole.RoleId and MemberId = @Id;
+
+create proc GetRoleNamesByMember(@Id varchar(64))
+as
+	select RoleName from Role join MemberInRole on Role.RoleId = MemberInRole.RoleId and MemberId = @Id;
+
+insert into Role(RoleName) values 
+	('Admin'),
+	('Member'),
+	('Customer');
+	select * from Member
+
+create table Province(
+	ProvinceId smallint not null primary key,
+	ProvinceName nvarchar(64) not null
+)
+select * from Province
+create table District(
+	DistrictId smallint not null primary key,
+	ProvinceId smallint not null references Province(ProvinceId),
+	DistrictName nvarchar(64) not null
+)
+--drop table ward
+create table Ward(
+	WardId int not null primary key,
+	DistrictId smallint not null references District(DistrictId),
+	WardName nvarchar(64) not null
+)
+--drop table Address
+create table Address(
+	AddressId int not null primary key identity(1,1),
+	MemberId varchar(64) not null,
+	WardId varchar(64) not null,
+	AddressName nvarchar(128) not null,
+	FullName varchar(64) not null,
+	Phone varchar(16) not null
+)
+--drop table StatusInvoice;
+create table StatusInvoice(
+	StatusInvoiceId tinyint not null primary key identity(1,1),
+	StatusInvoiceName nvarchar(32) not null
+)
+
+insert into StatusInvoice(StatusInvoiceName) values
+('Processing'),
+('Accessing'),
+('Shopping'),
+('Cancel'),
+('Successfully')
+--drop table Invoice
+create table Invoice(
+	InvoiceId uniqueidentifier not null primary key default newid(),
+	IncoiceDate datetime not null default getdate(),
+	AddressId int not null references Address(AddressId),
+	StatusInvoiceId tinyint not null references StatusInvoice(StatusInvoiceId),
+
+)
+--drop table InvoiceDetail
+create table InvoiceDetail(
+	InvoiceId uniqueidentifier not null references Invoice(InvoiceId),
+	ProductId int not null references Product(ProductId),
+	Price int not null,
+	Quantity smallint not null
+)
+
+INSERT INTO Province (ProvinceId, ProvinceName) VALUES 
+ (1, 'TpHCM'),
+ (2, N'Đồng Nai'),
+ (3, N'Bình Phước');
+GO
+select * from Province
+INSERT INTo District (DistrictId, ProvinceId, DistrictName) VALUES
+ (1, 1, N'Quận 1'),
+ (2, 1, N'Quận Tân Bình'),
+ (3, 1, N'Quận 3'),
+ (4, 1, N'Quận 10');
+GO
+select * from District
+INSERT INTO Ward(WardId, DistrictId, WardName) VALUES
+ (1, 1, N'Phường Dakao'),
+ (2, 1, N'Phường Bến Nghé'),
+ (3, 4, N'Phương 6'),
+ (4, 4, N'Phương 5');
+GO
+select * from Ward
+
+
+select * from Province
+select * from District
+select * from Ward
+select * from Invoice
+select * from Address
+
+create proc GetAddressesByMember(@Id varchar(64))
+as
+	select Address.*,DistrictName,WardName,ProvinceName
+			from Address join Ward on Address.WardId = Ward.WardId
+			join District on Ward.DistrictId = District.DistrictId
+			join Province on District.ProvinceId = Province.ProvinceId
+			where MemberId =@Id;

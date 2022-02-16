@@ -1,0 +1,29 @@
+﻿@model List<RoleChecked>
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>Role Name</th>
+            <th>Checked</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.RoleName</td>
+                <td>
+                    <input class="c" @(item.Checked ? "checked":"") type="checkbox" value="@item.RoleId"/>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $('.c').click(function(){
+        var rid = $(this).val();
+        $.post('/dashboard/member/addrole',{roleId:rid,memberId:'@ViewContext.RouteData.Values["id"]' },(d)=>{
+            console.log(d);
+        });
+    });
+</script>

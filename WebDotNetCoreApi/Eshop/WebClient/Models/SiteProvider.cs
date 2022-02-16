@@ -18,6 +18,46 @@
         AutoSendMailRepository autoSendMail;
         CartRepository cart;
         MemberRepository member;
+        RoleRepository role;
+        MemberInRoleRepository memberInRole;
+        ProvinceRepository province;
+        
+        public ProvinceRepository Province
+        {
+            get
+            {
+                if (province is null)
+                {
+                    province = new ProvinceRepository(configuration);
+                }
+                return province;
+            }
+        }
+        public MemberInRoleRepository MemberInRole
+        {
+            get
+            {
+                if (memberInRole is null)
+                {
+                    memberInRole = new MemberInRoleRepository(configuration);
+
+                }
+                return memberInRole;
+            }
+        }
+        public RoleRepository Role
+        {
+            get
+            {
+                if (role is null)
+                {
+                    role = new RoleRepository(configuration);
+
+                }
+                return role;
+            }
+        }
+        
         public MemberRepository Member
         {
             get

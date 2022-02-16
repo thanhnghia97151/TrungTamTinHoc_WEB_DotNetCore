@@ -24,17 +24,27 @@ namespace WebClient.Controllers
             return View();
         }
         [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("/auth/login");
+        }
+        [HttpPost]
         public async Task<IActionResult> Register(Member obj)
         {
             await provider.Member.Add(obj);
             return Redirect("/auth/login");
+        }
+        public IActionResult Denied()
+        {
+            return View();
         }
         public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(LoginModel obj)
+        public async Task<IActionResult> Login(LoginModel obj,string returnUrl)
         {
             ReponseLogin member = await provider.Member.Login(obj);
             if (member != null)
@@ -47,6 +57,13 @@ namespace WebClient.Controllers
                     new Claim(ClaimTypes.Name,obj.Urs),
                     new Claim(ClaimTypes.PrimarySid,member.Token)//Chuyền thử vào PrimarySid đề test
                 };
+                if (member.Roles!=null)
+                {
+                    foreach (string role in member.Roles)
+                    {
+                        claims.Add(new Claim(ClaimTypes.Role,role));    
+                    }
+                }
                 ClaimsIdentity identity = new ClaimsIdentity(claims,CookieAuthenticationDefaults.AuthenticationScheme);
                 ClaimsPrincipal principal = new ClaimsPrincipal(identity);
                 AuthenticationProperties properties = new AuthenticationProperties
@@ -54,7 +71,14 @@ namespace WebClient.Controllers
                     IsPersistent = obj.Rem
                 };
                 await HttpContext.SignInAsync(principal,properties);
-                return Redirect("/auth");
+                if (string.IsNullOrEmpty(returnUrl))
+                {
+                    return Redirect("/auth");
+                }
+                else
+                {
+                    return Redirect(returnUrl);
+                }
 
             }
             ModelState.AddModelError("", "Login Fail");

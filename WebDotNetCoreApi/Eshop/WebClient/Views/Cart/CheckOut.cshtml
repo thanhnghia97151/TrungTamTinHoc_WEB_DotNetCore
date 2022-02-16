@@ -1,0 +1,20 @@
+﻿<form>
+    <div>
+        <label>Province</label>
+        <select id="cid" asp-items="@ViewBag.provinces"></select>
+    </div>
+    <div>
+        <label>District</label>
+        <select id="did"></select>
+    </div>
+</form>
+<script>
+    $(cid).change(function(){
+
+        var pid = $(this).val();
+        $.post(`/cart/district/${pid}`,(d)=>{
+
+            console.log(d);
+        });
+    });
+</script>

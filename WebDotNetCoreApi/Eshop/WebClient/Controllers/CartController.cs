@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebClient.Models;
 
 namespace WebClient.Controllers
@@ -9,6 +11,18 @@ namespace WebClient.Controllers
         public CartController(IConfiguration configuration)
         {
             provider = new SiteProvider(configuration); 
+        }
+        [Authorize]
+        public async Task<IActionResult> CheckOut()
+        {
+            ViewBag.provinces = new SelectList(await provider.Province.GetProvinces(), "ProvinceId", "ProvinceName");
+
+            return View();
+        }
+        public async Task<IActionResult> District(short id)
+        {
+            return null;
+            //return await provider.District.GetDistricts(id)
         }
         public async Task<IActionResult> Index()
         {

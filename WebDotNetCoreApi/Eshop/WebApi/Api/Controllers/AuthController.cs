@@ -22,12 +22,16 @@ namespace WebApi.Api.Controllers
             if (member != null)
             {
                 //code
+
+                member.Roles = provider.Role.GetRoleNamesByMember(member.MemberId);
+                //
                 string token = Helper.CreateToken(member);
                 return new
                 {
                     Token = token,
                     MemberId = member.MemberId,
-                    Email = member.Email
+                    Email = member.Email,
+                    Roles = member.Roles
                 };
             }
             return null;
