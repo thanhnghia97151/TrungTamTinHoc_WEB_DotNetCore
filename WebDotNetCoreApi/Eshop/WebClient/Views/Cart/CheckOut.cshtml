@@ -1,20 +1,156 @@
-﻿<form>
-    <div>
-        <label>Province</label>
-        <select id="cid" asp-items="@ViewBag.provinces"></select>
-    </div>
-    <div>
-        <label>District</label>
-        <select id="did"></select>
-    </div>
-</form>
+﻿@model Address
+
+@if(ViewBag.addresses != null)
+{
+    
+
+    <form method="post" action="/cart/checkout" class="card">
+        <div class="accordion-header">
+            <h2>Your cart</h2>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-border">
+        <tr>
+            <td>Province</td>
+            <td>District</td>
+            <td>Ward</td>
+            <td>Address</td>
+            <td>Phone</td>
+            <td>FullName</td>
+            <td>Default</td>
+        </tr>
+        @foreach(Address item in ViewBag.addresses)
+        {
+            <tr>
+                <td>@item.ProvinceName</td>
+                <td>@item.DistrictName</td>
+                <td>@item.WardName</td>
+                <td>@item.AddressName</td>
+                <td>@item.Phone</td>
+                <td>@item.FullName</td>
+                <td>
+                    <input type="radio" name="addressId" value="@item.AddressId" @(item.IsDefault ? "checked" :"")/>
+                </td>
+            </tr>
+        }
+    </table>
+
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{int s = 0;}
+                    @foreach(Cart item in ViewBag.carts)
+                    {
+                        s += item.Price.Value * item.Quantity;
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td><img width="70" src="https://localhost:44318/images/@item.ImageUrl" /></td>
+                            <td>@item.Price</td>
+                            <td>@item.Quantity
+                            </td>
+                            <td>
+                                @(item.Price*item.Quantity)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4">Total</th>
+                    
+                        <td>@(s)</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="card-footer">
+            <div class="text-center">
+                <button class="btn btn-primary">Accept Order</button>
+            
+            </div>
+        </div>
+    </form>
+}
+else
+{
+    <form method="post" action="/cart/addaddress">
+        <div>
+            <label>Province</label>
+            <select id="pid" asp-items="@ViewBag.provinces"></select>
+        </div>
+        <div>
+            <label>District</label>
+            <select id="did"></select>
+        </div>
+        <div>
+            <label>Ward</label>
+            <select asp-for="WardId"></select>
+        </div>
+        <div>
+            <label>Address Name</label>
+            <input type="text" asp-for="AddressName"/>
+        </div>
+        <div>
+            <label>Phone</label>
+            <input type="number" asp-for="Phone"/>
+        </div>
+        <div>
+            <label>FullName</label>
+            <input type="text" asp-for="FullName"/>
+        </div>
+        <div>
+            <label>Default</label>
+            <input type="checkbox" value="true" asp-for="IsDefault" checked readonly/>
+        </div>
+        <div>
+            <button>Save Changes</button>
+        </div>
+    </form>
+}
+
+
+
 <script>
-    $(cid).change(function(){
+
+    function loadDistricts(id){
+         $.post(`/cart/district/${id}`,(d)=>{
+
+            //console.log(d);
+            for(var i in d){
+                $(did).append(`<option value="${d[i]['districtId']}">${d[i]['districtName']}</option> `);
+            }
+            loadWards($(did).val());
+        });
+    }
+    loadDistricts($(pid).val());
+    $(pid).change(function(){
 
         var pid = $(this).val();
-        $.post(`/cart/district/${pid}`,(d)=>{
+        //console.log(pid);
+       loadDistricts(pid);
 
-            console.log(d);
+    });
+
+    function loadWards(id){
+        $.post(`/cart/ward/${id}`,(d)=>{
+
+            for(var i in d){
+                $(WardId).append(`<option value="${d[i]['wardId']}">${d[i]['wardName']}</option> `);
+            }
         });
+    }
+
+    $(did).change(function(){
+        loadWards($(this).val());
     });
 </script>

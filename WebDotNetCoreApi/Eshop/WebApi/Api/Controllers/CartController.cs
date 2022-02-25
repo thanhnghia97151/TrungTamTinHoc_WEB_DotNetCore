@@ -14,7 +14,7 @@ namespace WebApi.Api.Controllers
             provider = new SiteProvider(configuration); 
 
         }
-        [Route("{id}")]
+        [HttpGet("{id}")]
         public IEnumerable<Cart> GetCarts(string id)
         {
             return provider.Cart.GetCarts(id);

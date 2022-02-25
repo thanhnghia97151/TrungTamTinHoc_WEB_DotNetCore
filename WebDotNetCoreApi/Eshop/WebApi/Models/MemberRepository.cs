@@ -13,6 +13,20 @@ namespace WebApi.Models
             return connection.Query<Member>("select MemberId, UserName,Email,Gender from Member ");
 
         }
+        public int AddMemberByGoogle(Member obj)
+        {
+            
+            string sql = "insert into Member(MemberId,UserName,Password,Email, Gender) values (@Id,@UserName,@Password,@Email, @Gender)";
+            return connection.Execute(sql, new
+            {
+                Id = obj.MemberId,
+                UserName = obj.UserName,
+                Password = Helper.Hash(obj.Password),
+                Email = obj.Email,
+                Gender = obj.Gender
+
+            });
+        }
         public int Add(Member obj)
         {
             obj.MemberId = Helper.RandomString(64);

@@ -13,6 +13,7 @@ namespace WebApi.Api.Controllers
         {
             provider = new SiteProvider(configuration);
         }
+        [HttpGet]
         public IEnumerable<Product> GetProducts()
         {
             return provider.Product.GetProducts();
@@ -38,12 +39,12 @@ namespace WebApi.Api.Controllers
         {
             return  provider.CategoryProduct.Add(list);
         }
-        [Route("{id}")]
+        [HttpGet("{id}")]
         public Product GetProduct(int id)
         {
             return provider.Product.GetProductById(id);
         }
-        [Route("product-by-category/{id}")]
+        [HttpGet("product-by-category/{id}")]
         public IEnumerable<Product> GetProductsByCategory(int id)
         {
             return provider.Product.GetProductByCatogory(id);
@@ -56,7 +57,7 @@ namespace WebApi.Api.Controllers
             ret+=provider.CategoryProduct.Edit(obj.CategoryProducts, obj.ProductId);
             return ret; 
         }
-        [Route("product-relation/{pid}")]
+        [HttpGet("product-relation/{pid}")]
         public IEnumerable<Product> GetProductsRelation(int pid)
         {
             return provider.Product.GetProductByCatogoryRelation(pid);

@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "WebClient/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.7"
+          "Microsoft.AspNet.WebApi.Client": "5.2.7",
+          "Microsoft.AspNetCore.Authentication.Google": "6.0.2"
         },
         "runtime": {
           "WebClient.dll": {}
@@ -23,6 +24,14 @@
           "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
             "assemblyVersion": "5.2.7.0",
             "fileVersion": "5.2.61128.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/6.0.2": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "6.0.2.0",
+            "fileVersion": "6.0.222.6412"
           }
         }
       },
@@ -873,6 +882,13 @@
       "sha512": "sha512-/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
       "path": "microsoft.aspnet.webapi.client/5.2.7",
       "hashPath": "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Go4twMzp874xYtAVgFFkOlO/d9ia6ONmF8Lmc+9z7KJbf7wy+lTlWaVprPiwSQCxE2ymgm2brO640K0rBKYYKA==",
+      "path": "microsoft.aspnetcore.authentication.google/6.0.2",
+      "hashPath": "microsoft.aspnetcore.authentication.google.6.0.2.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",

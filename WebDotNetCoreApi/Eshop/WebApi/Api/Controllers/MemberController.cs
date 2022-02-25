@@ -13,6 +13,7 @@ namespace WebApi.Api.Controllers
         {
             provider = new SiteProvider(configuration);
         }
+        [HttpGet]
         public IEnumerable<Member> GetMembers()
         {
             return provider.Member.GetMembers();

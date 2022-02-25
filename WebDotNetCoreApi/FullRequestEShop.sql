@@ -221,7 +221,8 @@ create table Address(
 	WardId varchar(64) not null,
 	AddressName nvarchar(128) not null,
 	FullName varchar(64) not null,
-	Phone varchar(16) not null
+	Phone varchar(16) not null, 
+	IsDefault bit not null default 0
 )
 --drop table StatusInvoice;
 create table StatusInvoice(
@@ -240,6 +241,7 @@ create table Invoice(
 	InvoiceId uniqueidentifier not null primary key default newid(),
 	IncoiceDate datetime not null default getdate(),
 	AddressId int not null references Address(AddressId),
+	MemberId varchar(64) not null references Member(MemberId),
 	StatusInvoiceId tinyint not null references StatusInvoice(StatusInvoiceId),
 
 )
@@ -286,3 +288,41 @@ as
 			join District on Ward.DistrictId = District.DistrictId
 			join Province on District.ProvinceId = Province.ProvinceId
 			where MemberId =@Id;
+
+
+select * from Address
+
+select * from Member
+
+delete from Address;
+exec GetAddressesByMember @Id = b6ylvo9bq9ml12m7bv4xwvyk91ptlj61571lptzpmvjnj3dlk8ej82dgl9po0ikj
+--drop proc AddInvoice
+create proc AddInvoice(
+	@InvoiceId uniqueidentifier,
+	@MemberId varchar(64),
+	@AddressId int,
+	@StatusInvoiceId tinyint,
+	@CartId varchar(32)
+)as
+begin
+	insert into Invoice(InvoiceId,AddressId,StatusInvoiceId,MemberId) values (@InvoiceId, @AddressId, @StatusInvoiceId,@MemberId);
+	insert into InvoiceDetail(InvoiceId,ProductId,Quantity,Price)
+		select @InvoiceId, Cart.ProductId, Cart.Quantity, Product.Price from Cart join Product 
+		on Cart.ProductId = Product.ProductId and CartId =@CartId;
+	delete from Cart where CartId =@CartId;
+end
+
+select * from Invoice
+select * from Address
+select * from Cart
+select * from Member
+select * from InvoiceDetail
+
+delete from Invoice;
+delete from InvoiceDetail
+ select newid();
+
+ select * from Member where MemberId ='102611808190504993465'
+
+
+ delete from Member where UserName = 'nguyenthanhnghia0907@gmail.com';

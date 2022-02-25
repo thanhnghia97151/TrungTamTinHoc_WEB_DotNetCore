@@ -10,7 +10,7 @@ namespace WebApi.Models
         }
         public int Add(Address obj)
         {
-            return connection.Execute("insert into Address(MemberId,AddressName,WardId,Phone,FullName) values (@MemberId,@AddressName,@WardId,@Phone,@FullName)", new {obj.MemberId, obj.AddressName, obj.Wardid, obj.FullName, obj.Phone });
+            return connection.Execute("insert into Address(MemberId,AddressName,WardId,Phone,FullName,IsDefault) values (@MemberId,@AddressName,@WardId,@Phone,@FullName,@IsDefault)", new {obj.MemberId, obj.AddressName, obj.WardId, obj.FullName, obj.Phone,obj.IsDefault });
         }
         public IEnumerable<Address> GetAddresses(string id)
         {

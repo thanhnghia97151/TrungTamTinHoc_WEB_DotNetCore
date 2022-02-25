@@ -4,7 +4,6 @@ D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMai
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\WorkerServiceAutoSendMail.deps.json
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\WorkerServiceAutoSendMail.runtimeconfig.json
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\WorkerServiceAutoSendMail.dll
-D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\ref\WorkerServiceAutoSendMail.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\WorkerServiceAutoSendMail.pdb
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\Dapper.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
@@ -54,3 +53,4 @@ D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMai
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\Microsoft.Extensions.Hosting.WindowsServices.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\System.ServiceProcess.ServiceController.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.ServiceProcess.ServiceController.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WorkerServiceAutoSendMail\obj\Debug\net6.0\refint\WorkerServiceAutoSendMail.dll

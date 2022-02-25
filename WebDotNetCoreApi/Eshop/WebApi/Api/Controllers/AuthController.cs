@@ -15,6 +15,26 @@ namespace WebApi.Api.Controllers
         {
             provider = new SiteProvider(configuration); 
         }
+        [HttpPost("loginoauth")]
+        public object LoginOAuth(Member obj)
+        {
+            Member member = provider.Member.GetMemberById(obj.MemberId);
+            if (member is null )
+            {
+                provider.Member.AddMemberByGoogle(obj);
+                
+            }
+            obj.Roles = provider.Role.GetRoleNamesByMember(obj.MemberId);
+            string token = Helper.CreateToken(obj);
+            return new
+            {
+                Token = token,
+                MemberId = obj.MemberId,
+                Email = obj.Email,
+                Roles = obj.Roles
+            };
+
+        }
         [HttpPost]
         public object Login(LoginModel obj)
         {
@@ -36,7 +56,7 @@ namespace WebApi.Api.Controllers
             }
             return null;
         }
-        [Authorize]
+        [HttpGet,Authorize]
         public Member GetMember()
         {
             return provider.Member.GetMemberById(User.FindFirstValue(ClaimTypes.NameIdentifier));

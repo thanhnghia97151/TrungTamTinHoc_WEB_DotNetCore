@@ -14,7 +14,7 @@ namespace WebApi.Api.Controllers
         {
             this.provider = new SiteProvider(configuration);
         }
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles ="Admin"),HttpGet]
         public IEnumerable<Role> GetRoles()
         {
             return provider.Role.GetRoles();

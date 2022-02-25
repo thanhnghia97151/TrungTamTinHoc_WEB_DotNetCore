@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MX5dKNwdgcfXiH1jWceQXVAImPqPnQrYSblfRhi2tdb+tM3v4W8P37dUYLfyJYsrSXQppSict/GUcJOrS3cmmQ==",
+  "dgSpecHash": "QKyCeHxjKGFel444Cke3Bn7mGCF1BdEHpDRB/Inml9vfgRQVw2YpuZZaRmRwHtTdnjA/a+kn73ZegTDkkbZKkQ==",
   "success": true,
   "projectFilePath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WebClient\\WebClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\6.0.2\\microsoft.aspnetcore.authentication.google.6.0.2.nupkg.sha512",
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

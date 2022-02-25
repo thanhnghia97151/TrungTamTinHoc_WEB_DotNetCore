@@ -4,7 +4,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
-
+builder.Services.AddSwaggerGen();
 
 //
 byte[] key = Encoding.ASCII.GetBytes("qwertyuiopasdfghjklzxcvbnm");
@@ -48,6 +48,8 @@ app.UseStaticFiles();//=> sử dụng cho wwwroot -> image, sử lý hình ảnh
 app.UseAuthentication();
 app.UseAuthorization();
 //
-
+app.UseSwagger();
+app.UseSwaggerUI();
+//
 app.MapControllers();
 app.Run();

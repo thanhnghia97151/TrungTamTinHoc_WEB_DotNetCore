@@ -33,12 +33,10 @@ D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\WebClient.deps.json
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\WebClient.runtimeconfig.json
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\WebClient.dll
-D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\ref\WebClient.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\WebClient.pdb
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\WebClient.csproj.AssemblyReference.cache
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\WebClient.GeneratedMSBuildEditorConfig.editorconfig
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\WebClient.AssemblyInfoInputs.cache
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\WebClient.AssemblyInfo.cs
@@ -54,3 +52,6 @@ D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\ref\WebClient.dll
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\WebClient.pdb
 D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\WebClient.genruntimeconfig.cache
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\WebClient.csproj.AssemblyReference.cache
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\TrungTamTinHoc_WEB_DotNetCore\WebDotNetCoreApi\Eshop\WebClient\obj\Debug\net6.0\refint\WebClient.dll

@@ -11,6 +11,7 @@ namespace WebApi.Api.Controllers
         public ProvinceController(IConfiguration configuration) : base(configuration)
         {
         }
+        [HttpGet]
         public IEnumerable<Province> GetProvinces()
         {
             return provider.Province.GetProvices();

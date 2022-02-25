@@ -24,5 +24,9 @@ namespace WebClient.Models
         {
             return await Get<List<Member>>("/api/member");
         } 
+        public async Task<ReponseLogin> LoginOAuth(Member obj)
+        {
+            return await PostGetData<Member, ReponseLogin>("/api/auth/loginoauth", obj);
+        }
     }
 }

@@ -20,6 +20,55 @@
         MemberRepository member;
         RoleRepository role;
         MemberInRoleRepository memberInRole;
+        DistrictRepository district;
+
+        AddressRepository address;
+        InvoiceRepository invoice;
+        public InvoiceRepository Invoice
+        {
+            get
+            {
+                if(invoice is null)
+                {
+                    invoice = new InvoiceRepository(configuration);
+                }
+                return invoice;
+            }
+        }
+        public AddressRepository Address
+        {
+            get
+            {
+                if (address is null)
+                {
+                    address = new AddressRepository(configuration);
+                }
+                return address;
+            }
+        }
+        WardRepository ward;
+        public WardRepository Ward
+        {
+            get
+            {
+                if (ward is null)
+                {
+                    ward = new WardRepository(configuration);
+                }
+                return ward;
+            }
+        }
+        public DistrictRepository District
+        {
+            get
+            {
+                if (district is null)
+                {
+                    district = new DistrictRepository(configuration);
+                }
+                return district;
+            }
+        }
         ProvinceRepository province;
         
         public ProvinceRepository Province

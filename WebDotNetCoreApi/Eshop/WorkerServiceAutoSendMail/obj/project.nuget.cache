@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pLPc8fYNNEN0kceaYn3YRxrgWowNScda7Cvrw/ZgmVPFvfosOU4ol0m7WwJZwQNJCOUliZ8jM309B6rt99prYQ==",
+  "dgSpecHash": "F9wTitU0ZdB/QY1b2+/p86dQmOZOzzznr2D0NFYmIoFfIOZ8BipQsA3dJm1Ck8dVpoU0wHRAqMNrdCqfLJ5UFg==",
   "success": true,
   "projectFilePath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\WebDotNetCoreApi\\Eshop\\WorkerServiceAutoSendMail\\WorkerServiceAutoSendMail.csproj",
   "expectedPackageFiles": [

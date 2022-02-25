@@ -27,6 +27,18 @@ namespace WebApi.Models
         DistrictRepository district;
         WardRepository ward;
         InvoiceRepository invoice;
+        AddressRepository address;
+        public AddressRepository Address
+        {
+            get
+            {
+                if(address is null)
+                {
+                    address = new AddressRepository(connection) ;
+                }
+                return address;
+            }
+        }
 
         public InvoiceRepository Invoice
         {
