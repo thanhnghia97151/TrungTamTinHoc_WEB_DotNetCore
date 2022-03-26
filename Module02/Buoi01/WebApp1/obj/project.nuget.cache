@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kNcMd3I73ThHA4oAwAFgQFH84V0S1t3Ccy2I9ZwTdywWS4WKCN8F/HXarz7CsLfe8GCk7/Ira7FDbuO1kpMILQ==",
+  "dgSpecHash": "t31OygO1VXIoVW2I2ttJOlVmxboBdGYYYmK9Bx6up11AHReUZWwuMoIvqe6UMmXZY2xwZqwn5LiUMBau+wZniw==",
   "success": true,
-  "projectFilePath": "D:\\TrungTamTinHoc_DHKH-TN\\Module02\\Buoi01\\WebApp1\\WebApp1.csproj",
+  "projectFilePath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\Module02\\Buoi01\\WebApp1\\WebApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\htmlagilitypack\\1.11.39\\htmlagilitypack.1.11.39.nupkg.sha512",
     "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",

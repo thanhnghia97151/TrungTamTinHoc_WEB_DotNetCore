@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TrungTamTinHoc_DHKH-TN\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj": {}
+    "D:\\TrungTamTinHoc_WEB_DotNetCore\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj": {}
   },
   "projects": {
-    "D:\\TrungTamTinHoc_DHKH-TN\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj": {
+    "D:\\TrungTamTinHoc_WEB_DotNetCore\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TrungTamTinHoc_DHKH-TN\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj",
+        "projectUniqueName": "D:\\TrungTamTinHoc_WEB_DotNetCore\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj",
         "projectName": "BasicGeneticAlgorithm",
-        "projectPath": "D:\\TrungTamTinHoc_DHKH-TN\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj",
+        "projectPath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\Module02\\Buoi01\\BasicGeneticAlgorithm\\BasicGeneticAlgorithm.csproj",
         "packagesPath": "C:\\Users\\ThanhNghiaPC\\.nuget\\packages\\",
-        "outputPath": "D:\\TrungTamTinHoc_DHKH-TN\\Module02\\Buoi01\\BasicGeneticAlgorithm\\obj\\",
+        "outputPath": "D:\\TrungTamTinHoc_WEB_DotNetCore\\Module02\\Buoi01\\BasicGeneticAlgorithm\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\ThanhNghiaPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
